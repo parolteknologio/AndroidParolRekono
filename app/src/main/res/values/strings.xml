@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">LocalSTT</string>
-    <string name="vosk_recognition_service">Kaldi/Vosk Recognizer</string>
-    <string name="recognized">Recognized: %1$s</string>
-    <string name="loading">Loading...</string>
-    <string name="speaknow">Start speaking now!</string>
+    <string name="app_name">Esperanto Parolrekono</string>
+    <string name="vosk_recognition_service">Vosk parolrekonilo</string>
+    <string name="recognized">Rekonis: %1$s</string>
+    <string name="loading">Enŝutas...</string>
+    <string name="speaknow">Parolu nun!</string>
 
 </resources>

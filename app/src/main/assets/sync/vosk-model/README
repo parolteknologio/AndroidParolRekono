@@ -1,9 +1,6 @@
-US English model for mobile Vosk applications
+Esperanto small model for Vosk
 
-Copyright 2020 Alpha Cephei Inc
+WER
 
-Accuracy: 10.38 (tedlium test) 9.85 (librispeech test-clean)
-Speed: 0.11xRT (desktop)
-Latency: 0.15s (right context)
-
-
+%WER 7.04 [ 8299 / 117826, 1023 ins, 1077 del, 6199 sub ] exp/chain_a/tdnn/decode_dev_look_fast/wer_11_0.0
+%WER 8.21 [ 9559 / 116489, 1005 ins, 1286 del, 7268 sub ] exp/chain_a/tdnn/decode_test_look_fast/wer_11_0.0

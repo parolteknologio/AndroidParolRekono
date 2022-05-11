@@ -5,7 +5,9 @@ vosk-model/conf/model.conf
 vosk-model/graph/Gr.fst
 vosk-model/graph/HCLr.fst
 vosk-model/graph/disambig_tid.int
+vosk-model/graph/phones.txt
 vosk-model/graph/phones/word_boundary.int
+vosk-model/graph/words.txt
 vosk-model/ivector/final.dubm
 vosk-model/ivector/final.ie
 vosk-model/ivector/final.mat
