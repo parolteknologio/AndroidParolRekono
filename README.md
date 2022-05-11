@@ -1,6 +1,11 @@
 # LocalSTT
 
-(Jump to [Català](#Català))
+### [Esperanto]
+
+Jen eta provi fari parolrekonilon uzante la Vosk parolrekona modelo.01
+(vosk-model-small-eo-0.22)
+
+
 
 ### [English]
 

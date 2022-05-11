@@ -5,6 +5,16 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+
+    <!--
+    https://stackoverflow.com/questions/64672910/speechrecognizer-isrecognitionavailable-always-false-in-android-11
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="false"
         android:icon="@drawable/ic_service_trigger"
