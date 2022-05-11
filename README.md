@@ -5,6 +5,7 @@
 Jen eta provi fari parolrekonilon uzante la Vosk parolrekona modelo.01
 (vosk-model-small-eo-0.22)
 
+Vi povas elŝuti de https://javabog.dk/privat/EsperantoParolRekono.apk
 
 
 ### [English]
