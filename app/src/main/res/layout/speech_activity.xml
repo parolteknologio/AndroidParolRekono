@@ -32,10 +32,12 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="16dp"
             android:hint="@string/loading"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColor="@color/colorPrimary"
             android:id="@+id/editText"
             android:layout_centerInParent="true"
             />
+        <!--
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
+        -->
     </LinearLayout>
 </RelativeLayout>

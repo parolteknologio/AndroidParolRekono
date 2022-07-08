@@ -18,7 +18,7 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@drawable/ic_service_trigger"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:launchMode="standard"
         android:theme="@style/AppTheme">
@@ -100,7 +100,7 @@
         <service
             android:name=".VoskRecognitionService"
             android:process=":speechProcess"
-            android:icon="@drawable/ic_service_trigger"
+            android:icon="@drawable/ic_esperanta_parolrekono"
             android:label="@string/recognition_service_label"
             android:description="@string/recognition_service_description"
             android:permission="android.permission.RECORD_AUDIO">
