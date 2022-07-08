@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cat.oreilly.localstt">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -23,7 +24,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".SpeechActivity"
+            android:name="dk.nordfalk.esperanto.parolrekono.SpeechActivity"
             android:theme="@style/Theme.LocalSTT.Translucent">
             <intent-filter>
                 <action android:name="android.speech.action.RECOGNIZE_SPEECH" />
@@ -87,19 +88,21 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             -->
+        </activity>
+        <activity
+            android:name="dk.nordfalk.esperanto.parolrekono.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        
+
         <service
             android:name=".VoskRecognitionService"
             android:process=":speechProcess"
             android:icon="@drawable/ic_service_trigger"
-            android:label="@string/vosk_recognition_service"
+            android:label="@string/recognition_service_label"
+            android:description="@string/recognition_service_description"
             android:permission="android.permission.RECORD_AUDIO">
             <intent-filter>
 

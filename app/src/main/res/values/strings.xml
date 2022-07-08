@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Esperanto Parolrekono</string>
-    <string name="vosk_recognition_service">Esperanto parolrekona servo</string>
+    <string name="app_name">Esperanto parolrekono</string>
+    <string name="recognition_service_label">Esperanto parolrekona servo</string>
+    <string name="recognition_service_description">Parolrekono en Esperanto, bazita sur Vosk, farita de Jacob Nordfalk por la telegrama grupo \'Esperanto kaj Teĥniko\'</string>
     <string name="recognized">Rekonis: %1$s</string>
     <string name="loading">Pretiĝas...</string>
     <string name="speaknow">Parolu nun!</string>

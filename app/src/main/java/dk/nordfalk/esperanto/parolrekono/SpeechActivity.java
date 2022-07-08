@@ -13,7 +13,7 @@
 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
-package cat.oreilly.localstt;
+package dk.nordfalk.esperanto.parolrekono;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +41,8 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.List;
+
+import cat.oreilly.localstt.R;
 
 public class SpeechActivity extends AppCompatActivity {
     protected static final String TAG = SpeechActivity.class.getSimpleName();
@@ -104,7 +106,7 @@ public class SpeechActivity extends AppCompatActivity {
             checkPermission();
         }
 
-        editText = findViewById(R.id.text);
+        editText = findViewById(R.id.editText);
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
 
         speechRecognizer.setRecognitionListener(new RecognitionListener() {
