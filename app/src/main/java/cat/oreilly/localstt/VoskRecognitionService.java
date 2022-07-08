@@ -116,6 +116,7 @@ public class VoskRecognitionService extends RecognitionService implements Recogn
                 Log.i(TAG, "Creating recognizer");
 
                 recognizer = new Recognizer(model, 16000.0f);
+                //recognizer.setMaxAlternatives(3);
             }
 
             if (speechService == null) {
@@ -184,7 +185,26 @@ public class VoskRecognitionService extends RecognitionService implements Recogn
     @Override
     public void onResult(String hypothesis) {
         if (hypothesis != null) {
-            Log.i(TAG, hypothesis);
+            Log.i(TAG, "onResult: " + hypothesis);
+            /*
+onResult: {
+      "text" : "oni diru ĉu la rezulto estos pli bone aŭ ne"
+    }
+
+                //recognizer.setMaxAlternatives(3);
+    onResult: {
+      "alternatives" : [{
+          "confidence" : 329.542145,
+          "text" : " nun ni vidu ĉu venas pli ol unu se la rezulto aŭ ne"
+        }, {
+          "confidence" : 329.418335,
+          "text" : " nu ni vidu ĉu venas pli ol unu se la rezulto aŭ ne"
+        }, {
+          "confidence" : 328.344757,
+          "text" : " nun ni diru ĉu venas pli ol unu se la rezulto aŭ ne"
+        }]
+    }
+             */
             Gson gson = new Gson();
             Map<String, String> map = gson.fromJson(hypothesis, Map.class);
             String text = map.get("text");
@@ -195,7 +215,7 @@ public class VoskRecognitionService extends RecognitionService implements Recogn
     @Override
     public void onFinalResult(String hypothesis) {
         if (hypothesis != null) {
-            Log.i(TAG, hypothesis);
+            Log.i(TAG, "onFinalResult: " + hypothesis);
             Gson gson = new Gson();
             Map<String, String> map = gson.fromJson(hypothesis, Map.class);
             String text = map.get("text");

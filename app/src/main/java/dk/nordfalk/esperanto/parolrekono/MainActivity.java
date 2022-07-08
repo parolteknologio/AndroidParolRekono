@@ -16,6 +16,7 @@
 package dk.nordfalk.esperanto.parolrekono;
 
 import android.Manifest;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -24,7 +25,9 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import cat.oreilly.localstt.R;
+import cat.oreilly.localstt.VoskRecognitionService;
 
 public class MainActivity extends AppCompatActivity {
     protected static final String TAG = MainActivity.class.getSimpleName();
@@ -43,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     public static final Integer RecordAudioRequestCode = 1;
     private SpeechRecognizer speechRecognizer;
     private EditText editText;
+    private Button button;
+    private TextView resultsTextView;
 
     protected void toast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
@@ -51,15 +57,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.speech_activity);
+        setContentView(R.layout.main_activity);
 
         editText = findViewById(R.id.editText);
-        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
+        button = findViewById(R.id.button);
+        resultsTextView = findViewById(R.id.resultsTextView);
+
+        // new ComponentName("dk.nordfalk.esperanto.parolrekono", "cat.oreilly.localstt.VoskRecognitionService"));
+        ComponentName serviceComponent = new ComponentName(getPackageName(), VoskRecognitionService.class.getName());
+        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this, serviceComponent);
+
+        button.setOnClickListener(v -> {
+            //final Locale esperanto = Locale.forLanguageTag("eo");
+            //speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, esperanto);
+            //speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Parolu nun");
+            // speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3);
+            final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+            speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+            speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true);
+            speechRecognizer.startListening(speechRecognizerIntent);
+        });
+
+
         speechRecognizer.setRecognitionListener(new RecognitionListener() {
             @Override
             public void onReadyForSpeech(Bundle bundle) {
                 Log.i(TAG, "onReadyForSpeech "+bundle);
-                editText.setHint("onReadyForSpeech");
             }
 
             @Override
@@ -95,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 ArrayList<String> results = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 Log.i(TAG, results.toString());
                 editText.setText(results.get(0));
+                resultsTextView.setText(String.join("\n", results));
                 toast(String.format(getString(R.string.recognized), results.get(0)));
             }
 
@@ -104,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 ArrayList<String> results = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 Log.i(TAG, results.toString());
                 editText.setText(results.get(0));
+                resultsTextView.setText(String.join("\n", results));
             }
 
             @Override
@@ -121,11 +146,6 @@ public class MainActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             checkPermission();
         }
-        final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Parolu nun");
-        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        speechRecognizer.startListening(speechRecognizerIntent);
     }
 
     @Override
