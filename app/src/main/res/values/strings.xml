@@ -2,9 +2,9 @@
 <resources>
 
     <string name="app_name">Esperanto Parolrekono</string>
-    <string name="vosk_recognition_service">Vosk parolrekonilo</string>
+    <string name="vosk_recognition_service">Esperanto parolrekona servo</string>
     <string name="recognized">Rekonis: %1$s</string>
-    <string name="loading">Enŝutas...</string>
+    <string name="loading">Pretiĝas...</string>
     <string name="speaknow">Parolu nun!</string>
 
 </resources>

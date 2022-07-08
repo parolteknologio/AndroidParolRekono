@@ -33,9 +33,7 @@ import android.os.Message;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
 
@@ -139,7 +137,7 @@ public class SpeechActivity extends AppCompatActivity {
             @Override
             public void onError(int error) {
                 Log.i(TAG, "onError "+error);
-                showError();
+                toast("Okazis eraro dum rekono ("+error+")");
             }
 
             @Override
@@ -240,10 +238,6 @@ public class SpeechActivity extends AppCompatActivity {
         finish();
     }
 
-    private void showError() {
-        toast("Error loading recognizer");
-    }
-    
     private void setResultIntent(final Handler handler, List<String> matches) {
         Intent intent = new Intent();
         intent.putStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS, new ArrayList<>(matches));

@@ -85,7 +85,7 @@ public class VoskRecognitionService extends RecognitionService implements Recogn
                     setupRecognizer();
 
                 } catch (Exception e) {
-                    Log.e(TAG, "Failed to init recognizer ");
+                    Log.e(TAG, "Failed to init recognizer ", e);
                     error(android.speech.SpeechRecognizer.ERROR_CLIENT);
                 }
 
@@ -127,7 +127,7 @@ public class VoskRecognitionService extends RecognitionService implements Recogn
             }
             speechService.startListening(this);
         } catch (IOException e) {
-            Log.e(TAG, e.getMessage());
+            Log.e(TAG, "setupRecognizer", e);
         }
     }
 
@@ -135,6 +135,7 @@ public class VoskRecognitionService extends RecognitionService implements Recogn
         try {
             mCallback.readyForSpeech(bundle);
         } catch (RemoteException e) {
+            Log.e(TAG, "readyForSpeech", e);
             // empty
         }
     }
@@ -148,6 +149,7 @@ public class VoskRecognitionService extends RecognitionService implements Recogn
                 mCallback.partialResults(bundle);
             }
         } catch (RemoteException e) {
+            Log.e(TAG, "results", e);
             // empty
         }
     }
