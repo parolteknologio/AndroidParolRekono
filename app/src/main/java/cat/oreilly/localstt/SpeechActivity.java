@@ -137,7 +137,8 @@ public class SpeechActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onError(int i) {
+            public void onError(int error) {
+                Log.i(TAG, "onError "+error);
                 showError();
             }
 
