@@ -6,9 +6,8 @@ build
 
 .settings     
 .project
-
-# JDT-specific (Eclipse Java Development Tools)     
-.classpath
+.idea
+**/*.md5
 
 .vscode
 local.properties

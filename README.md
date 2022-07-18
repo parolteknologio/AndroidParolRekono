@@ -1,6 +1,6 @@
-# LocalSTT
+# Android Esperanto Parolrekono
 
-### [Esperanto]
+## [Esperanto]
 
 Android Esperanto Parolrekono rekonas vian parolon en Esperanto kaj provizas la tekston.
 
@@ -9,8 +9,13 @@ Android Esperanto Parolrekono rekonas vian parolon en Esperanto kaj provizas la 
 
 Vi povas elŝuti de https://javabog.dk/privat/EsperantoParolRekono.apk
 
+### Privateco #
 
-### [English]
+Mi kolektas aŭ registras neniujn privatajn informojn
+
+
+
+## [English]
 
 > **Note: This application is just a proof of concept for now**
 
