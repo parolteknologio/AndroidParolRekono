@@ -12,3 +12,5 @@ build
 .vscode
 local.properties
 /fastlane/report.xml
+/sekretoj.properties
+/app/release/

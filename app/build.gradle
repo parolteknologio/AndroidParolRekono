@@ -26,10 +26,26 @@ android {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64', 'x86'
         }
     }
+
+    signingConfigs {
+        if (rootProject.file("sekretoj.properties").exists()) {
+            def props = new Properties()
+            props.load(new FileInputStream(rootProject.file("sekretoj.properties")))
+            release {
+                storeFile file(props.keyStore)
+                storePassword props.keyStorePassword
+                keyAlias props.keyAlias
+                keyPassword props.keyAliasPassword
+            }
+        }
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
