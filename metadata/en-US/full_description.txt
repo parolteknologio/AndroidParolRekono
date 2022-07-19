@@ -1,0 +1,3 @@
+Android Esperanto Parolrekono rekonas vian parolon en Esperanto kaj provizas la tekston al aliaj servoj.
+
+Legu pli ĉe https://github.com/parolteknologio/AndroidParolRekono
