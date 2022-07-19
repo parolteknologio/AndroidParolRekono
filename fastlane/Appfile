@@ -1,0 +1,2 @@
+json_key_file("/home/j/andet/A_signaturer/jacobnordfalkplaykonsol-pc-api-8294421063218887510-489-ce36d774f02e.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("dk.nordfalk.esperanto.parolrekono") # e.g. com.krausefx.app
