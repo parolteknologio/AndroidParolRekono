@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_margin="10dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Jen teksta kampo kie vi povas kontroli ĉu ĉio funcias bone. \nVi devas elekti la klavaron Kõnele kaj aktivigi parolrekonon."
+        android:text="Jen teksta kampo kie vi povas kontroli ĉu ĉio funckias bone. \nVi devas elekti la klavaron Kõnele kaj aktivigi parolrekonon."
         />
 
     <EditText
@@ -52,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Vi povas rekte elprovi parolrekonon ĉi-sube - Se vi ne certas ĉu funcias, aŭ se ne eblas por vi aktivigi klavaron."
+        android:text="Vi povas rekte elprovi parolrekonon ĉi-sube - Se vi ne certas ĉu funkcias, aŭ se ne eblas por vi aktivigi klavaron."
         />
 
     <Button
@@ -64,3 +67,5 @@
         />
 
 </LinearLayout>
+
+</ScrollView>
